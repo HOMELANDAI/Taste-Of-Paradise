@@ -1,0 +1,36 @@
+name: Bootstrap T.O.P GitHub Project
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  create-project:
+    name: Create and populate GitHub Projects board
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify Projects token is configured
+        env:
+          PROJECTS_TOKEN: ${{ secrets.GH_PROJECTS_TOKEN }}
+        run: |
+          if [ -z "$PROJECTS_TOKEN" ]; then
+            echo "::error::Configure repository secret GH_PROJECTS_TOKEN with GitHub Projects write permission."
+            exit 1
+          fi
+      - name: Bootstrap native GitHub Project
+        env:
+          GH_PROJECTS_TOKEN: ${{ secrets.GH_PROJECTS_TOKEN }}
+          PROJECT_OWNER: HOMELANDAI
+          PROJECT_REPO: Taste-Of-Paradise
+          PROJECT_TITLE: 'T.O.P by HAI — Taste of Paradise | Implementation'
+          GITHUB_STEP_SUMMARY: ${{ env.GITHUB_STEP_SUMMARY }}
+        run: node scripts/bootstrap-github-project.mjs
