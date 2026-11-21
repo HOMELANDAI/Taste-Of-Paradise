@@ -99,7 +99,7 @@ ensureSelect(number, "Domain", [
 ]);
 
 try {
-  gh("project", "link", String(number), "--owner", owner, "--repo", fullRepo);
+  gh("project", "link", String(number), "--owner", owner, "--repo", repo);
   console.log("Project linked to repository.");
 } catch (e) {
   console.warn("Repository link may already exist or need extra permissions. Continuing to add issues.");
