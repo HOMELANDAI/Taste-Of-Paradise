@@ -32,5 +32,4 @@ jobs:
           PROJECT_OWNER: HOMELANDAI
           PROJECT_REPO: Taste-Of-Paradise
           PROJECT_TITLE: 'T.O.P by HAI — Taste of Paradise | Implementation'
-          GITHUB_STEP_SUMMARY: ${{ env.GITHUB_STEP_SUMMARY }}
         run: node scripts/bootstrap-github-project.mjs
