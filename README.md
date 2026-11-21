@@ -46,3 +46,11 @@ npm run dev
 T.O.P by HAI should behave like a culinary content engine: food is the visual anchor, live voting is the engagement loop, taste testers provide local proof, collectible recipe cards create return behavior, sponsor drops create monetization, and the NCRD Gateway connects the concept to a broader Dominican Republic discovery ecosystem.
 
 The prize distribution document was intentionally excluded from this build because this repo is focused on culinary programming, recipe systems, engagement, sponsorship, live-streaming, and product structure.
+
+## GitHub Projects execution board
+
+This repo contains a ten-phase implementation plan and 21 open execution issues. A native GitHub Projects board can be created and populated using the [manual bootstrap workflow](.github/workflows/bootstrap-github-project.yml). The [GitHub Project Board setup guide](docs/project/GITHUB-PROJECT-BOARD.md) explains the one-time owner token authorization, board fields, recommended views and troubleshooting. **The board does not exist until that workflow is successfully run with Projects authorization.**
+
+- [Open phased implementation issues](https://github.com/HOMELANDAI/Taste-Of-Paradise/issues)
+- [Master implementation plan](docs/project/MASTER-IMPLEMENTATION-PLAN.md)
+- [GitHub Projects setup guide](docs/project/GITHUB-PROJECT-BOARD.md)
